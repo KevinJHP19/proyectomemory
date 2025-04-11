@@ -7,7 +7,13 @@ import {
 
 } from "@/components/ui/card"
  
-export const Tarjeta = ({nombre,imagen}) =>{
+// Define the props interface
+interface TarjetaProps {
+    nombre: string;
+    imagen: string;
+}
+
+export const Tarjeta = ({nombre, imagen}: TarjetaProps) =>{
     return (
         <Card className="bg-[#F2EBCB]">
         <CardHeader>
