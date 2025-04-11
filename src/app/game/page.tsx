@@ -1,9 +1,9 @@
 export default function Game(){
     console.log("Esta es la página de juego.");
     return (
-        <div>
-            <h1>Hola nuevo proyecto memory</h1>
-            <p>Esta es la página de juego.</p>
-        </div>
+        <div className="flex flex-col items-center justify-center w-full">
+      <h1 className="text-2xl font-bold">Página de Juego</h1>
+      <p>Contenido de la página de juego.</p>
+    </div>
     );
 }

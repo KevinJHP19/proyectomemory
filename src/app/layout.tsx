@@ -28,13 +28,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <header className="bg-white dark:bg-gray-900">
-        <Header/>
+        <header className="bg-[#A5131D] dark:bg-gray-900 flex justify-center items-center p-4 w-full">
+          <Header />
         </header>
-        <main>
+        <main className="flex flex-col items-center w-full">
           {children}
         </main>
-        
       </body>
     </html>
   );
