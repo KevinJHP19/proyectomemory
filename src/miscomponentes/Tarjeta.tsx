@@ -18,24 +18,27 @@ interface TarjetaProps {
     imagen: string;
 }
 
-
-export const Tarjeta = ({nombre, imagen}: TarjetaProps) =>{
-
+export const Tarjeta = ({ nombre, imagen }: TarjetaProps) => {
     const [clicktarjeta, setClicktarjeta] = useState(0);
     const [revelada, setRevelada] = useState(false);
     const { incrementarGlobal } = useContadorGlobal(); // Usa el contexto del contador global
 
-    function Contadortarjeta(){
-        if(!revelada){
+    function Contadortarjeta() {
+        if (!revelada) {
             setRevelada(true);
             setClicktarjeta(clicktarjeta + 1);
             incrementarGlobal(); // Incrementa el contador global
+
+            // Ocultar la carta después de 1 segundo
+            setTimeout(() => {
+                setRevelada(false);
+            }, 1000);
         }
-        
     }
+
     return (
         <Card
-            className={`bg-[#F2EBCB] ${!revelada ? "bg-cover bg-center" : ""}`}
+            className={`bg-[#F2EBCB] ${!revelada ? "bg-cover bg-center  transition duration-150 ease-in-out" : " transition duration-150 ease-in-out"}`}
             style={{
                 backgroundImage: !revelada
                     ? "url('https://i.pinimg.com/originals/34/b4/df/34b4df40b5fc257204c98782b723c25c.png')"
@@ -68,4 +71,4 @@ export const Tarjeta = ({nombre, imagen}: TarjetaProps) =>{
             </CardFooter>
         </Card>
     );
-}
+};
