@@ -2,12 +2,16 @@ import { Tarjeta } from "./Tarjeta";
 import { digimons } from "@/lib/digimon";
 import { useState } from "react";
 
-export default function GrupoTarjetas() {
+interface GrupoTarjetasProps {
+    tiempoRestante: number; // Tiempo restante pasado desde el componente padre
+}
+
+export default function GrupoTarjetas({ tiempoRestante }: GrupoTarjetasProps) {
     const [seleccionadas, setSeleccionadas] = useState<number[]>([]); // IDs de las tarjetas seleccionadas
     const [emparejadas, setEmparejadas] = useState<number[]>([]); // IDs de las tarjetas emparejadas
 
     function manejarSeleccion(id: number) {
-        if (seleccionadas.length < 2 && !seleccionadas.includes(id)) {
+        if (tiempoRestante > 0 && seleccionadas.length < 2 && !seleccionadas.includes(id)) {
             const nuevasSeleccionadas = [...seleccionadas, id];
             setSeleccionadas(nuevasSeleccionadas);
 
@@ -36,7 +40,7 @@ export default function GrupoTarjetas() {
     }
 
     return (
-        <div className="flex flex-wrap justify-center gap-10 mt-5">
+        <div className="flex flex-wrap justify-center gap-5  ">
             {digimons.map((tarjeta) => (
                 <Tarjeta
                     key={tarjeta.id}
