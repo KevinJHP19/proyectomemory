@@ -1,4 +1,4 @@
-import { Shuffle } from "lucide-react";
+
 import { Tarjeta } from "./Tarjeta";
 import { digimons } from "@/lib/digimon";
 export default function GrupoTarjetas() {
