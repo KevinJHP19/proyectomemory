@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from "react";
+import React, { useState, createContext, useContext } from "react";
 import {
     Card,
     CardContent,
@@ -9,6 +9,8 @@ import {
     CardFooter,
 
 } from "@/components/ui/card"
+import { useContadorGlobal } from "@/context/Contador" // Importa el contexto del contador global
+
  
 // Define the props interface
 interface TarjetaProps {
@@ -16,19 +18,19 @@ interface TarjetaProps {
     imagen: string;
 }
 
+
 export const Tarjeta = ({nombre, imagen}: TarjetaProps) =>{
 
     const [clicktarjeta, setClicktarjeta] = useState(0);
+    const { incrementarGlobal } = useContadorGlobal(); // Usa el contexto del contador global
 
     function Contadortarjeta(){
         setClicktarjeta(clicktarjeta + 1);
-        console.log("Contador de tarjeta: " + clicktarjeta);
-        
-
+        incrementarGlobal(); // Incrementa el contador global
     }
     return (
-        <a onClick={Contadortarjeta}  className="flex justify-center items-center">
-            <Card className="bg-[#F2EBCB]">
+        
+            <Card className="bg-[#F2EBCB]" onClick={Contadortarjeta}>
             <CardHeader>
                 <CardTitle>{nombre}</CardTitle>
                 
@@ -43,7 +45,7 @@ export const Tarjeta = ({nombre, imagen}: TarjetaProps) =>{
             </CardFooter>
             
             </Card>
-        </a>
+        
 
     );
 }

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/miscomponentes/Header";
+import { ContadorProvider } from "@/context/Contador";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,8 +32,15 @@ export default function RootLayout({
         <header className="bg-[#A5131D] dark:bg-gray-900 flex justify-center items-center p-4 w-full">
           <Header />
         </header>
+        
+
+          
+
+
         <main className="flex flex-col items-center w-full">
+        <ContadorProvider>
           {children}
+          </ContadorProvider>
         </main>
       </body>
     </html>

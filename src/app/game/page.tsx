@@ -1,6 +1,17 @@
+"use client";
+import React from "react";
+
 import GrupoTarjetas from "@/miscomponentes/GrupoTarjetas";
+
+import { TotalClicks } from "@/context/Contador"; // Importa el componente TotalClicks
+
+
+
 export default function Game(){
+    
     console.log("Esta es la página de juego.");
+
+    
     return (
         <div className="flex flex-col items-center justify-center w-full">
 
@@ -24,6 +35,12 @@ export default function Game(){
                 <span>0</span>
             </div>
         </div>
+        <div className="flex flex-col items-center gap-2">
+            <span>Clicks:</span>
+            <div id="clicks" className="flex justify-center items-center bg-cyan-900 text-white rounded-lg p-2 border-2 border-red-700">
+                <span><TotalClicks /></span>
+            </div>
+        </div>
 
         <button className="mt-4">
             <span className="text-white bg-red-900 p-4 rounded-lg">JUGAR</span>
@@ -35,6 +52,9 @@ export default function Game(){
       
       
         
-    </div>
+        
+
+</div>
+
     );
 }
