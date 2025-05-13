@@ -12,7 +12,7 @@ export default function Game(  ) {
     
 
     const [puntos, setPuntos] = useState(0); // Estado para los puntos del jugador
-    const [puntosTotales, setPuntosTotales] = useState(0); // Estado para los puntos totales
+    
 
     // Función para manejar el clic en el botón "JUGAR"
     const manejarClick = () => {
