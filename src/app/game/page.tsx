@@ -4,10 +4,22 @@ import React, { useEffect, useState } from "react";
 import GrupoTarjetas from "@/miscomponentes/GrupoTarjetas";
 import { TotalClicks } from "@/context/Contador"; // Importa el componente TotalClicks
 
-export default function Game() {
+export default function Game(  ) {
     const [tiempo, setTiempo] = useState(20); // Tiempo inicial de 20 segundos
-    const [juegoTerminado, setJuegoTerminado] = useState(false); // Estado para controlar el fin del juego
+    
 
+    const [juegoTerminado, setJuegoTerminado] = useState(false); // Estado para controlar el fin del juego
+    
+
+    const [puntos, setPuntos] = useState(0); // Estado para los puntos del jugador
+    const [puntosTotales, setPuntosTotales] = useState(0); // Estado para los puntos totales
+
+    // Función para manejar el clic en el botón "JUGAR"
+    const manejarClick = () => {
+        setJuegoTerminado(false); // Reinicia el estado del juego
+        setTiempo(20); // Reinicia el tiempo a 20 segundos
+        setPuntos(0); // Reinicia los puntos a 0
+    };
     useEffect(() => {
         if (tiempo > 0) {
             const timer = setInterval(() => {
@@ -45,7 +57,7 @@ export default function Game() {
                             id="puntos"
                             className="flex justify-center items-center bg-cyan-900 text-white rounded-lg p-2 border-2 border-red-700"
                         >
-                            <span>0</span>
+                            <span>{puntos}</span>
                         </div>
                     </div>
                     <div className="flex flex-col items-center gap-2">
@@ -60,7 +72,7 @@ export default function Game() {
                         </div>
                     </div>
 
-                    <button className="mt-4">
+                    <button className="mt-4" onClick={manejarClick}>
                         <span className="text-white bg-red-900 p-4 rounded-lg">JUGAR</span>
                     </button>
                 </div>
@@ -70,7 +82,7 @@ export default function Game() {
                             <h2 className="text-3xl font-bold text-red-600">¡Fin del Juego!</h2>
                         </div>
                     ) : (
-                        <GrupoTarjetas tiempoRestante={tiempo} />
+                        <GrupoTarjetas tiempoRestante={tiempo} puntos={puntos} setPuntos={setPuntos} />
                     )}
                 </div>
             </div>

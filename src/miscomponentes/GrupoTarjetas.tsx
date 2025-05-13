@@ -4,11 +4,15 @@ import { useState } from "react";
 
 interface GrupoTarjetasProps {
     tiempoRestante: number; // Tiempo restante pasado desde el componente padre
+    puntos: number;
+    setPuntos: (puntos: number ) => void;
+
 }
 
-export default function GrupoTarjetas({ tiempoRestante }: GrupoTarjetasProps) {
+export default function GrupoTarjetas({ tiempoRestante,puntos, setPuntos }: GrupoTarjetasProps ) {
     const [seleccionadas, setSeleccionadas] = useState<number[]>([]); // IDs de las tarjetas seleccionadas
     const [emparejadas, setEmparejadas] = useState<number[]>([]); // IDs de las tarjetas emparejadas
+    
 
     function manejarSeleccion(id: number) {
         if (tiempoRestante > 0 && seleccionadas.length < 2 && !seleccionadas.includes(id)) {
@@ -31,6 +35,7 @@ export default function GrupoTarjetas({ tiempoRestante }: GrupoTarjetasProps) {
         if (primeraTarjeta?.nombre === segundaTarjeta?.nombre) {
             // Si coinciden, añadirlas a las emparejadas
             setEmparejadas((prev) => [...prev, primeraId, segundaId]);
+            setPuntos(puntos + 10); // Incrementa los puntos            
         }
 
         // Limpiar selección después de un breve tiempo
