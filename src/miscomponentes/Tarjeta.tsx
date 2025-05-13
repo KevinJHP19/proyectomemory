@@ -1,5 +1,7 @@
 'use client'
 import React, { useState} from "react";
+//importame el  Imag
+import Image from "next/image";
 import {
     Card,
     CardContent,
@@ -48,10 +50,12 @@ export const Tarjeta = ({ id, nombre, imagen, emparejada, revelada, onSelecciona
             </CardHeader>
             <CardContent>
                 {revelada || emparejada ? (
-                    <img
+                    <Image
                         src={imagen}
                         alt={nombre}
-                        className="w-[150px] h-[150px]"
+                        
+                        width={150}
+                        height={150}
                     />
                 ) : (
                     <div className="w-[150px] h-[150px] opacity-0">

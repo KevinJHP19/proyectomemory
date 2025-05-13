@@ -1,23 +1,23 @@
 export const digimons = [
-    { id: 13, nombre: "Palmon", imagen: "https://wikimon.net/images/thumb/3/3a/Palmon_m10b.png/200px-Palmon_m10b.png" },
-    { id: 3, nombre: "Agumon", imagen: "https://wikimon.net/images/thumb/9/9f/Agumon3.png/141px-Agumon3.png" },
-    { id: 16, nombre: "Gomamon", imagen: "https://wikimon.net/images/thumb/8/8f/Gomamon2.png/200px-Gomamon2.png" },
-    { id: 6, nombre: "Patamon", imagen: "https://wikimon.net/images/d/d2/Patamon_adventure_fes_2017.png" },
-    { id: 17, nombre: "Hawkmon", imagen: "https://wikimon.net/images/thumb/9/96/Hawkmon_m10b.png/200px-Hawkmon_m10b.png" },
-    { id: 11, nombre: "Tentomon", imagen: "https://wikimon.net/images/thumb/3/34/Tentomon_adventure_fes_2017.png/180px-Tentomon_adventure_fes_2017.png" },
-    { id: 4, nombre: "Gabumon", imagen: "https://preview.redd.it/i-need-png-images-of-digimon-renders-for-a-personal-project-v0-gu8xwktqqkvd1.png?width=640&crop=smart&auto=webp&s=9f71447472cc66c7c7ce76ded483c48b0a2b078a" },
-    { id: 7, nombre: "Gatomon", imagen: "https://img1.picmix.com/output/stamp/normal/0/8/1/3/2533180_64749.png" },
-    { id: 9, nombre: "Piyomon", imagen: "https://digi-api.com/images/digimon/w/Piyomon.png" },
-    { id: 5, nombre: "Gabumon", imagen: "https://preview.redd.it/i-need-png-images-of-digimon-renders-for-a-personal-project-v0-gu8xwktqqkvd1.png?width=640&crop=smart&auto=webp&s=9f71447472cc66c7c7ce76ded483c48b0a2b078a" },
-    { id: 15, nombre: "Gomamon", imagen: "https://wikimon.net/images/thumb/8/8f/Gomamon2.png/200px-Gomamon2.png" },
-    { id: 14, nombre: "Palmon", imagen: "https://wikimon.net/images/thumb/3/3a/Palmon_m10b.png/200px-Palmon_m10b.png" },
-    { id: 10, nombre: "Piyomon", imagen: "https://digi-api.com/images/digimon/w/Piyomon.png" },
-    { id: 1, nombre: "Patamon", imagen: "https://wikimon.net/images/d/d2/Patamon_adventure_fes_2017.png" },
-    { id: 12, nombre: "Tentomon", imagen: "https://wikimon.net/images/thumb/3/34/Tentomon_adventure_fes_2017.png/180px-Tentomon_adventure_fes_2017.png" },
-    { id: 18, nombre: "Hawkmon", imagen: "https://wikimon.net/images/thumb/9/96/Hawkmon_m10b.png/200px-Hawkmon_m10b.png" },
-    { id: 2, nombre: "Agumon", imagen: "https://wikimon.net/images/thumb/9/9f/Agumon3.png/141px-Agumon3.png" },
-    { id: 8, nombre: "Gatomon", imagen: "https://img1.picmix.com/output/stamp/normal/0/8/1/3/2533180_64749.png" }
-];
+    { id: 1, nombre: "Bulbasaur", imagen: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png" },
+    { id: 2, nombre: "Ivysaur", imagen: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png" },
+    { id: 3, nombre: "Venusaur", imagen: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png" },
+    { id: 4, nombre: "Charmander", imagen: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png" },
+    { id: 5, nombre: "Charmeleon", imagen: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/5.png" },
+    { id: 6, nombre: "Charizard", imagen: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png" },
+    { id: 7, nombre: "Squirtle", imagen: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png" },
+    { id: 8, nombre: "Wartortle", imagen: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/8.png" },
+    { id: 9, nombre: "Blastoise", imagen: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/9.png" },
+    { id: 10, nombre: "Caterpie", imagen: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10.png" },
+    { id: 11, nombre: "Metapod", imagen: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/11.png" },
+    { id: 12, nombre: "Butterfree", imagen: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/12.png" },
+    { id: 13, nombre: "Weedle", imagen: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/13.png" },
+    { id: 14, nombre: "Kakuna", imagen: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/14.png" },
+    { id: 15, nombre: "Beedrill", imagen: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/15.png" },
+    { id: 16, nombre: "Pidgey", imagen: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/16.png" },
+    { id: 17, nombre: "Pidgeotto", imagen: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/17.png" },
+    { id: 18, nombre: "Pidgeot", imagen: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/18.png" },
+].sort(() => Math.random() - 0.5); // Mezcla aleatoriamente el array
 
 
     
