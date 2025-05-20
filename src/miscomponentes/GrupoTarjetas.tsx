@@ -1,5 +1,5 @@
 import { Tarjeta } from "./Tarjeta";
-import { pokemonAleatorios } from "@/lib/pokemon";
+import { pokemonAleatorios } from "@/lib/Pokemon";
 import { useState } from "react";
 
 interface GrupoTarjetasProps {
