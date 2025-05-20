@@ -1,9 +1,14 @@
 'use client'
 import { datos_usuarios } from "@/miscomponentes/localStorage"
 import { useState, useEffect } from "react"
-
+type Usuario = {
+  id: number
+  nombre: string
+  email: string
+  password: string
+}
 export default function Register() {
-  const [usuarios, setUsuarios] = useState([])
+  const [usuarios, setUsuarios] = useState<Usuario[]>([])
 
   const [nombre, setNombre] = useState('')
   const [email, setEmail] = useState('')
@@ -19,7 +24,7 @@ export default function Register() {
     }
   }, [])
 
-  const confirmarRegistro = (e) => {
+  const confirmarRegistro = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
     const emailExistente = usuarios.find(u => u.email === email)

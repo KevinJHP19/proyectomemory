@@ -2,12 +2,17 @@
 import { datos_usuarios } from "@/miscomponentes/localStorage"
 import { useState, useEffect } from "react"
 
-
+type Usuario = {
+  id: number
+  nombre: string
+  email: string
+  password: string
+}
 
 
 export default function Login(){
 
-    const [usuarios, setusuario] = useState([])
+    const [usuarios, setusuario] = useState<Usuario[]>([])
     const [email, setemail] = useState("")
     const [password, setPassword] = useState("")
 
@@ -20,7 +25,7 @@ export default function Login(){
         }
     }, [])
 
-    const confirmarlogin = (e) =>{
+    const confirmarlogin = (e: React.FormEvent<HTMLFormElement>) =>{
         e.preventDefault()
 
         const usuarioValido = usuarios.find(
