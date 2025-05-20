@@ -2,12 +2,7 @@
 import { datos_usuarios } from "@/miscomponentes/localStorage"
 import { useState, useEffect } from "react"
 
-type Usuario = {
-  id: number
-  nombre: string
-  email: string
-  password: string
-}
+
 
 
 export default function login(){
