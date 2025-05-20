@@ -1,5 +1,5 @@
 import { Tarjeta } from "./Tarjeta";
-import { pokemonAleatorios } from "@/lib/Pokemon";
+import { PokemonAleatorios } from "@/lib/Pokemon";
 import { useState } from "react";
 
 interface GrupoTarjetasProps {
@@ -12,7 +12,7 @@ interface GrupoTarjetasProps {
 export default function GrupoTarjetas({ tiempoRestante,puntos, setPuntos }: GrupoTarjetasProps ) {
     const [seleccionadas, setSeleccionadas] = useState<number[]>([]); // IDs de las tarjetas seleccionadas
     const [emparejadas, setEmparejadas] = useState<number[]>([]); // IDs de las tarjetas emparejadas
-    const pokemons = pokemonAleatorios();
+    const pokemons = PokemonAleatorios();
     
 
     function manejarSeleccion(id: number) {

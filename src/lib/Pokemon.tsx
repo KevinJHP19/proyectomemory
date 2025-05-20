@@ -7,7 +7,7 @@ type Pokemon = {
     imagen: string;
 };
 
-export function pokemonAleatorios(){
+export function PokemonAleatorios(){
     const [arrayPokemons, setArrayPokemons] = useState<Pokemon[]>([]);
 
     useEffect(() =>{

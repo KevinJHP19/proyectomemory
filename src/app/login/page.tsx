@@ -5,7 +5,7 @@ import { useState, useEffect } from "react"
 
 
 
-export default function login(){
+export default function Login(){
 
     const [usuarios, setusuario] = useState([])
     const [email, setemail] = useState("")
