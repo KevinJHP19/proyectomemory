@@ -1,5 +1,5 @@
 import { Tarjeta } from "./Tarjeta";
-import { digimons } from "@/lib/digimon";
+import { PokemonAleatorios } from "@/lib/Pokemon";
 import { useState } from "react";
 
 interface GrupoTarjetasProps {
@@ -12,6 +12,7 @@ interface GrupoTarjetasProps {
 export default function GrupoTarjetas({ tiempoRestante,puntos, setPuntos }: GrupoTarjetasProps ) {
     const [seleccionadas, setSeleccionadas] = useState<number[]>([]); // IDs de las tarjetas seleccionadas
     const [emparejadas, setEmparejadas] = useState<number[]>([]); // IDs de las tarjetas emparejadas
+    const pokemons = PokemonAleatorios();
     
 
     function manejarSeleccion(id: number) {
@@ -29,8 +30,8 @@ export default function GrupoTarjetas({ tiempoRestante,puntos, setPuntos }: Grup
         const [primeraId, segundaId] = tarjetasSeleccionadas;
 
         // Verifica si ambas tarjetas tienen el mismo nombre
-        const primeraTarjeta = digimons.find((tarjeta) => tarjeta.id === primeraId);
-        const segundaTarjeta = digimons.find((tarjeta) => tarjeta.id === segundaId);
+        const primeraTarjeta = pokemons.find((tarjeta) => tarjeta.id === primeraId);
+        const segundaTarjeta = pokemons.find((tarjeta) => tarjeta.id === segundaId);
 
         if (primeraTarjeta?.nombre === segundaTarjeta?.nombre) {
             // Si coinciden, añadirlas a las emparejadas
@@ -46,7 +47,7 @@ export default function GrupoTarjetas({ tiempoRestante,puntos, setPuntos }: Grup
 
     return (
         <div className="flex flex-wrap justify-center gap-5  ">
-            {digimons.map((tarjeta) => (
+            {pokemons.map((tarjeta) => (
                 <Tarjeta
                     key={tarjeta.id}
                     id={tarjeta.id}
