@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from "react"
+import { useState} from "react"
 type Usuario = {
   id: number
   nombre: string
@@ -8,14 +8,14 @@ type Usuario = {
   password: string
 }
 export default function Register() {
-  const [usuarios, setUsuarios] = useState<Usuario[]>([])
+  
 
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [confirmarPassword, setConfirmarPassword] = useState('')
   const [error, setError] = useState('')
-  const [role, setRole] = useState('user') // Asignar un rol por defecto
+  const role = 'user' // Asignar un rol por defecto
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -55,6 +55,11 @@ export default function Register() {
         className="bg-white p-10 rounded shadow-md w-full max-w-md"
       >
         <h2 className="text-2xl font-bold mb-6 text-center">Registro</h2>
+        {error && (
+          <div className="mb-4 p-3 bg-red-100 text-red-700 rounded">
+            {error}
+          </div>
+        )}
         <div className="mb-4">
           <label className="block text-base font-medium text-gray-700 mb-2" htmlFor="nombre">
             Nombre:
