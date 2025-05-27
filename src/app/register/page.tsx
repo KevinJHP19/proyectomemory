@@ -1,12 +1,7 @@
 'use client'
 
 import { useState} from "react"
-type Usuario = {
-  id: number
-  nombre: string
-  email: string
-  password: string
-}
+
 export default function Register() {
   
 
@@ -43,7 +38,7 @@ export default function Register() {
     
   }
 
-    catch (error) {
+    catch {
       setError("Error al registrar el usuario. Inténtalo de nuevo.")
     }
   }

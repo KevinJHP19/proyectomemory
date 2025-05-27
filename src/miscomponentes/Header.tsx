@@ -46,7 +46,7 @@ import { useEffect, useState } from "react";
                     } else {
                         alert("Error al cerrar sesión. Inténtalo de nuevo.");
                     }
-                } catch (error) {
+                } catch  {
                     alert("Error al cerrar sesión. Inténtalo de nuevo.");
                 }
             }}
