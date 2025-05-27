@@ -1,5 +1,5 @@
 
-import Index from "./pages/Index";
+import Index from "./home/page";
 
 
 export default function Home() {
