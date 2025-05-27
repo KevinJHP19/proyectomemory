@@ -13,6 +13,7 @@ export default function Register() {
   const [nombre, setNombre] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [confirmarPassword, setConfirmarPassword] = useState('')
 
   useEffect(() => {
     const datosGuardados = localStorage.getItem('datos_usuarios')
@@ -51,6 +52,29 @@ export default function Register() {
     setNombre("")
     setEmail("")
     setPassword("")
+    
+  }
+  
+  const handleSubmit = (e: React.FormEvent) =>{
+    e.preventDefault();
+    const formdata = new FormData ( e.target as HTMLFormElement);
+    const data = Object.fromEntries(formdata);
+    console.log("Datos del formulario:", data);
+    
+    async function login() {
+      const url = "https://soothing-magic-production.up.railway.app/api/register"
+      const respuesta = await fetch(url,{
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      })
+      const respuestaJson = await respuesta.json()
+      console.log(respuestaJson)
+      
+    }
+    login()
   }
 
   return (
@@ -100,6 +124,18 @@ export default function Register() {
             required
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+        <div className="mb-4">
+          <label className="block text-base font-medium text-gray-700 mb-2" htmlFor="confirmar-password">
+            Confirmar Contraseña:
+          </label>
+          <input
+            type="password"
+            id="confirmar-password"
+            name="confirmar-password"
+            className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+            required
           />
         </div>
         <button
